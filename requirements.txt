@@ -1,2 +1,460 @@
-start of requirments
-yet to start
+
+
+---
+
+1. Overall System Architecture                                                                                           
+
+1. Data Collection Layer
+2. AI / Strategy Layer
+3. Trading Decision Engine
+4. Order Execution System
+5. Monitoring & Risk Management
+
+2. Types of Trading Strategies to Support
+
+1️⃣ Intraday Trading
+Features required:
+Real-time price data (tick level)
+Technical indicators
+Order book analysis
+Volume analysis
+Latency optimization 
+Typical indicators:
+Moving averages
+VWAP
+RSI
+MACD
+Bollinger bands
+Order flow
+2️⃣ Swing Trading
+Timeframe: 2 days – 2 weeks
+Required:
+Daily candle data
+Trend detection
+Pattern recognition
+Indicators:
+50/200 MA
+Support & Resistance
+Fibonacci retracement
+Trendline detection
+AI models can detect:
+Breakouts
+Reversals
+Continuation patterns
+
+3️⃣ News / Social Media Based Trading
+AI analyzes news sentiment.
+
+Sources:
+Twitter / X
+Reddit
+Google News
+Financial news APIs
+Telegram channels
+3. Data Sources Required
+Market Data APIs
+Data required:
+OHLC price
+tick data
+order book
+volume
+historical data
+Social Media Data APIs
+
+Platform	API
+
+Twitter	Twitter API
+Reddit	Reddit API
+News	NewsAPI
+Telegram	Telegram Bot API
+Financial News	AlphaVantage / Finnhub
+
+
+
+---
+
+4. AI Models Needed
+1️⃣ Technical Strategy Models
+Used for:
+price prediction
+pattern detection
+Algorithms:
+
+Random Forest
+XGBoost
+LSTM
+GRU
+Transformers
+2️⃣ News Sentiment AI
+Used for social media analysis
+Techniques:
+NLP
+Sentiment analysis
+Named entity recognition
+Models:
+BERT
+FinBERT
+GPT based models
+Example output:
+
+TCS News Sentiment Score = +0.78
+
+3️⃣ Reinforcement Learning (Advanced)
+
+AI learns trading strategy automatically.
+
+Algorithms:
+
+Deep Q Learning
+
+PPO
+
+Actor Critic
+
+
+Used by hedge funds.
+
+
+---
+
+5. Tech Stack Required
+
+Backend
+
+Languages:
+
+Python (most popular)
+
+C++
+
+Java
+
+
+Python libraries:
+
+pandas
+numpy
+scikit-learn
+tensorflow
+pytorch
+ta-lib
+backtrader
+Zipline
+
+Real-Time Data Processing
+
+Tools:
+
+Apache Kafka
+
+Redis
+
+RabbitMQ
+
+
+Used for:
+
+Market data streaming
+
+
+---
+
+Database
+
+Database	Purpose
+
+PostgreSQL	trade records
+MongoDB	social media data
+InfluxDB	time series data
+Redis	caching
+
+
+
+---
+
+6. Trading Engine (Core System)
+
+The execution engine handles:
+
+buy orders
+
+sell orders
+
+stop loss
+
+take profit
+
+
+Example workflow:
+
+AI Model → Buy Signal
+        ↓
+Risk Check
+        ↓
+Position Size Calculation
+        ↓
+Broker API Order
+        ↓
+Trade Confirmation
+
+
+---
+
+7. Broker Integration
+
+Your app must integrate with broker APIs.
+
+Example:
+
+Zerodha Kite API
+Upstox API
+Angel One Smart API
+Capabilities:
+Place order
+Modify order
+Cancel order
+Get portfolio
+Get positions
+
+
+
+---
+
+8. Risk Management System
+
+Most important part.
+
+Features required:
+
+1️⃣ Stop Loss
+
+Example:
+
+Stop loss = 1.5%
+
+
+---
+
+2️⃣ Position Sizing
+
+Example:
+
+Risk per trade = 1%
+
+
+---
+
+3️⃣ Max Daily Loss
+
+Example:
+
+Stop trading if loss > 3%
+
+
+---
+
+4️⃣ Exposure Limits
+
+Example:
+
+Max open positions = 5
+
+
+---
+
+9. Backtesting System
+
+Before live trading, you must test strategies.
+
+Tools:
+
+Backtrader
+
+Zipline
+
+QuantConnect
+
+PyAlgoTrade
+
+
+Example:
+
+Test strategy on 10 years data
+
+Metrics:
+
+Sharpe ratio
+
+Max drawdown
+
+Win rate
+
+Profit factor
+
+
+
+---
+
+
+Tech:
+
+Frontend:
+
+React
+
+Next.js
+
+
+Backend:
+
+FastAPI
+
+Node.js
+
+
+
+---
+
+11. Infrastructure
+
+Hosting:
+
+AWS
+
+GCP
+
+Azure
+
+
+Services needed:
+
+EC2 → compute
+S3 → data storage
+Lambda → automation
+
+
+---
+
+12. Automation Scheduler
+
+Tools:
+
+Airflow
+
+Cron jobs
+
+Celery
+
+
+Used for:
+
+model training
+data updates
+strategy execution
+
+
+---
+
+13. Security Requirements
+
+Very important.
+
+Security layers:
+
+encrypted API keys
+
+secure login
+
+two factor authentication
+
+rate limit control
+
+
+
+---
+
+14. Development Team Needed
+
+To build a production level platform:
+
+Role	Responsibility
+
+Quant Developer	trading models
+ML Engineer	AI models
+Backend Engineer	APIs
+Frontend Engineer	UI
+DevOps Engineer	infrastructure
+Financial Analyst	strategy
+ Challenges
+
+Major problems:
+
+latency
+
+market noise
+
+false signals
+
+overfitting
+
+broker API limits
+
+ Legal Requirements (India)
+
+You must follow Securities and Exchange Board of India rules.
+
+Important:
+
+algo trading approval
+
+broker compliance
+
+audit logs
+
+risk control
+
+
+
+---
+
+ Example Real Trading Platforms
+
+Examples of companies doing this:
+
+QuantConnect
+
+Alpaca
+
+Zerodha
+ Minimum Skills Required
+
+To build this system you need:
+
+Programming
+
+Python
+
+SQL
+
+APIs
+
+
+AI
+
+Machine learning
+
+NLP
+
+
+Finance
+
+trading strategies
+
+risk management
+
+
+Infrastructure
+
+cloud
+
+streaming systems
